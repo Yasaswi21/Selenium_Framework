@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-16T09:58:29 IST" name="Selenium Framework Suite" finished-at="2025-06-16T10:01:56 IST" duration-ms="207523">
+    <groups>
+    </groups>
+    <test started-at="2025-06-16T09:58:29 IST" name="ChromeTest" finished-at="2025-06-16T10:01:56 IST" duration-ms="207523">
+      <class name="Test.DeleteUserTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:28 IST" name="setup" finished-at="2025-06-16T10:01:29 IST" duration-ms="688" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="validlogin()[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:29 IST" name="validlogin" finished-at="2025-06-16T10:01:35 IST" duration-ms="6304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validlogin -->
+        <test-method signature="upUser(java.lang.String)[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:35 IST" name="upUser" data-provider="deleteuserdata" finished-at="2025-06-16T10:01:43 IST" duration-ms="7485" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_2000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method signature="upUser(java.lang.String)[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:43 IST" name="upUser" data-provider="deleteuserdata" finished-at="2025-06-16T10:01:49 IST" duration-ms="6790" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_2001]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method signature="upUser(java.lang.String)[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:49 IST" name="upUser" data-provider="deleteuserdata" finished-at="2025-06-16T10:01:56 IST" duration-ms="6669" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_2002]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Test.DeleteUserTest@3590fc5b]" started-at="2025-06-16T10:01:56 IST" name="tearDown" finished-at="2025-06-16T10:01:56 IST" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Test.DeleteUserTest -->
+      <class name="Test.AddUserTest">
+        <test-method is-config="true" signature="setUpExtent()[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T09:58:28 IST" name="setUpExtent" finished-at="2025-06-16T09:58:29 IST" duration-ms="215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpExtent -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T09:58:29 IST" name="setup" finished-at="2025-06-16T10:00:18 IST" duration-ms="109183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="validlogin()[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:00:18 IST" name="validlogin" finished-at="2025-06-16T10:00:25 IST" duration-ms="6808" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validlogin -->
+        <test-method signature="addUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:00:26 IST" name="addUser" data-provider="userdata" finished-at="2025-06-16T10:00:36 IST" duration-ms="9569" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_021]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[James  Butler]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[afajei8ofW]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUser -->
+        <test-method signature="addUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:00:36 IST" name="addUser" data-provider="userdata" finished-at="2025-06-16T10:00:45 IST" duration-ms="9335" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_022]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[James  Butler]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[skjn5vksvJF]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUser -->
+        <test-method signature="addUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:00:45 IST" name="addUser" data-provider="userdata" finished-at="2025-06-16T10:00:55 IST" duration-ms="9667" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_023]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[James  Butler]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sanvks9jEio]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:00:55 IST" name="tearDown" finished-at="2025-06-16T10:00:55 IST" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:Test.AddUserTest@59474f18]" started-at="2025-06-16T10:01:56 IST" name="flushReport" finished-at="2025-06-16T10:01:57 IST" duration-ms="331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flushReport -->
+      </class> <!-- Test.AddUserTest -->
+      <class name="Test.UpdateUserTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:00:55 IST" name="setup" finished-at="2025-06-16T10:00:56 IST" duration-ms="708" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="validlogin()[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:00:56 IST" name="validlogin" finished-at="2025-06-16T10:01:02 IST" duration-ms="6433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validlogin -->
+        <test-method signature="upUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:01:02 IST" name="upUser" data-provider="updateuserdata" finished-at="2025-06-16T10:01:11 IST" duration-ms="8675" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_021]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user_2000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ajfAJFK3jj]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method signature="upUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:01:11 IST" name="upUser" data-provider="updateuserdata" finished-at="2025-06-16T10:01:19 IST" duration-ms="8462" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_022]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user_2001]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[KJVKJafka4o]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method signature="upUser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:01:19 IST" name="upUser" data-provider="updateuserdata" finished-at="2025-06-16T10:01:28 IST" duration-ms="8380" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user_023]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user_2002]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[jfKFJkkfa9jk]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Test.UpdateUserTest@41d477ed]" started-at="2025-06-16T10:01:28 IST" name="tearDown" finished-at="2025-06-16T10:01:28 IST" duration-ms="207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- Test.UpdateUserTest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Selenium Framework Suite -->
+</testng-results>
