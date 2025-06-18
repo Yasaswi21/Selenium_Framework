@@ -93,14 +93,10 @@
                 <suiteXmlFiles>
                     <suiteXmlFile>testng.xml</suiteXmlFile>
                 </suiteXmlFiles>
-                <systemPropertyVariables>
-                    <browser>${browser}</browser>
-                    <url>${url}</url>
-                    <html>${html}</html>
-                </systemPropertyVariables>
             </configuration>
         </plugin>
     </plugins>
 </build>
+
 
 </project>
