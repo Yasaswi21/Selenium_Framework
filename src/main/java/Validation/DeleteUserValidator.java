@@ -20,14 +20,14 @@ public class DeleteUserValidator {
         try {
             if (driver.findElements(SUCCESS_MESSAGE).size() > 0) {
             	 test.log(Status.PASS,"User Successfully Deleted");
-                softAssert.assertTrue(true, "Update success message verified.");
+                softAssert.assertTrue(true, "Delete success message verified.");
             } else {
                 String path = ScreenshotUtils.captureScreenshot(driver);
-                test.log(Status.FAIL, "Update success message NOT displayed.<br><img src='" + path + "' height='300' width='400'/>");
-                softAssert.fail("Update success message not found.");
+                test.log(Status.FAIL, "Delete success message NOT displayed.<br><img src='" + path + "' height='300' width='400'/>");
+                softAssert.fail("Delete success message not found.");
             }
         } catch (Exception e) {
-            test.log(Status.FAIL, "Exception during update validation: " + e.getMessage());
+            test.log(Status.FAIL, "Exception during Delete validation: " + e.getMessage());
             softAssert.fail("Exception: " + e.getMessage());
         }
 
