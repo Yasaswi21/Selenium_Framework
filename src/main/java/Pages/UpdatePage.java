@@ -32,8 +32,9 @@ public class UpdatePage {
 	
 	public void searchUser(String username, ExtentTest test) throws InterruptedException {
 		ui.sendKeys(usernameField, username,"Typing username: " + username, test);
+		Thread.sleep(2000);
 		ui.click(searchfield, "Searching for: " + username, test);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 	}
 
 	public void updateUser(String new_username, String new_password, ExtentTest test) throws InterruptedException {
