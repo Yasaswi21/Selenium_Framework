@@ -2,35 +2,44 @@ package Validation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.asserts.SoftAssert;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import Utils.ObjectRepoReader;
 import Utils.ScreenshotUtils;
 
+import java.time.Duration;
+
 public class UpdateUserValidator {
 
-	private static final By SUCCESS_MESSAGE = ObjectRepoReader.getLocator("Validation", "UPDATESUCCESS");
+    private static final By SUCCESS_MESSAGE = ObjectRepoReader.getLocator("Validation", "UPDATESUCCESS");
+    private static final int WAIT_TIME = 10;  // Wait time in seconds
 
-    public static void validateUpdateUser(WebDriver driver, ExtentTest test) {
-        SoftAssert softAssert = new SoftAssert();
+    public static boolean validateUpdateUser(WebDriver driver, ExtentTest test) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME));
 
         try {
-            if (driver.findElements(SUCCESS_MESSAGE).size() > 0) {
-            	 test.log(Status.PASS,"User Successfully Updated");
-                softAssert.assertTrue(true, "Update success message verified.");
+            if (isElementPresent(driver, SUCCESS_MESSAGE, wait)) {
+                test.log(Status.PASS, "User successfully updated.");
+                return true;
             } else {
                 String path = ScreenshotUtils.captureScreenshot(driver);
                 test.log(Status.FAIL, "Update success message NOT displayed.<br><img src='" + path + "' height='300' width='400'/>");
-                softAssert.fail("Update success message not found.");
+                return false;
             }
         } catch (Exception e) {
             test.log(Status.FAIL, "Exception during update validation: " + e.getMessage());
-            softAssert.fail("Exception: " + e.getMessage());
+            return false;
         }
+    }
 
-        softAssert.assertAll();
+    private static boolean isElementPresent(WebDriver driver, By locator, WebDriverWait wait) {
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+            return driver.findElements(locator).size() > 0;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
