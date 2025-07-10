@@ -2,9 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.aventstack.extentreports.ExtentTest;
-
 import Utils.UIActions;
 import Utils.ObjectRepoReader;
 import Validation.AddUserValidator;
@@ -40,24 +38,31 @@ public class AdminPage {
         ui.click(addButton, "Clicking on Add button", test);
     }
 
-    public void addUser(String username, String empName, String password, ExtentTest test) {
-        ui.click(userRoleDropdown, "Clicking User Role dropdown", test);
-        ui.click(userRoleSelect, "Selecting 'Admin' from User Role dropdown", test);
+    public boolean addUser(String username, String empName, String password, ExtentTest test) {
+        try {
+            ui.click(userRoleDropdown, "Clicking User Role dropdown", test);
+            ui.click(userRoleSelect, "Selecting 'Admin' from User Role dropdown", test);
 
-        ui.click(statusDropdown, "Clicking Status dropdown", test);
-        ui.click(statusSelect, "Selecting 'Enabled' from Status dropdown", test);
+            ui.click(statusDropdown, "Clicking Status dropdown", test);
+            ui.click(statusSelect, "Selecting 'Enabled' from Status dropdown", test);
 
-        ui.sendKeys(empNameField, empName, "Typing Employee Name: " + empName, test);
+            ui.sendKeys(empNameField, empName, "Typing Employee Name: " + empName, test);
 
-        By empNameSuggestion = By.xpath("//div[@role='option']/span[contains(text(),'" + empName + "')]");
-        ui.click(empNameSuggestion, "Selecting employee name from suggestions", test);
+            By empNameSuggestion = By.xpath("//div[@role='option']/span[contains(text(),'" + empName + "')]");
+            ui.click(empNameSuggestion, "Selecting employee name from suggestions", test);
 
-        ui.sendKeys(usernameField, username, "Typing username: " + username, test);
-        ui.sendKeys(passwordField, password, "Typing password; " + password, test);
-        ui.sendKeys(confirmPasswordField, password, "Confirming password: " + password, test);
+            ui.sendKeys(usernameField, username, "Typing username: " + username, test);
+            ui.sendKeys(passwordField, password, "Typing password: " + password, test);
+            ui.sendKeys(confirmPasswordField, password, "Confirming password: " + password, test);
 
-        ui.click(saveButton, "Clicking Save button", test);
+            ui.click(saveButton, "Clicking Save button", test);
 
-        AddUserValidator.validateAddUser(driver, test, ui);
+            boolean isAdded = AddUserValidator.validateAddUser(driver, test, ui);
+            return isAdded;
+
+        } catch (Exception e) {
+            test.fail("Add User process failed due to: " + e.getMessage());
+            return false;
+        }
     }
 }
