@@ -8,19 +8,23 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
+import Utils.ExtentReportManager;
+import Utils.ReportTable;
+import Utils.SummaryReportUtils;
+import Utils.UserSummaryTracker;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import Utils.ExtentReportManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 
-    // Thread-safe WebDriver and ExtentTest
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     protected static ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
 
     protected static ExtentReports extent;
+    private static ExtentTest summary; // ✅ Declare summary test node
 
     public WebDriver getDriver() {
         return driver.get();
@@ -33,6 +37,7 @@ public class Base {
     @BeforeSuite
     public void setUpExtent() {
         extent = ExtentReportManager.getInstance();
+        summary = extent.createTest("Test Summary Report"); // ✅ Create test node for summary
     }
 
     @Parameters("browser")
@@ -55,10 +60,11 @@ public class Base {
             System.out.println("Browser setup failed: " + e.getMessage());
         }
 
-        localDriver.manage().window().maximize();
-        localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        driver.set(localDriver);
+        if (localDriver != null) {
+            localDriver.manage().window().maximize();
+            localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.set(localDriver);
+        }
     }
 
     @AfterClass
@@ -72,6 +78,16 @@ public class Base {
     @AfterSuite
     public void flushReport() {
         if (extent != null) {
+
+            // Log tables in Extent HTML Summary Dashboard
+            ReportTable.buildAndLogSummary("Added Users", new String[]{"Username", "Status"}, UserSummaryTracker.getAddSummary(), summary);
+            ReportTable.buildAndLogSummary("Updated Users", new String[]{"Old Username", "New Username", "Status"}, UserSummaryTracker.getUpdateSummary(), summary);
+            ReportTable.buildAndLogSummary("Deleted Users", new String[]{"Username", "Status"}, UserSummaryTracker.getDeleteSummary(), summary);
+
+            // Generate Excel Summary Report
+            SummaryReportUtils.generateExcelSummary();
+
+            // Final flush
             extent.flush();
         }
     }
